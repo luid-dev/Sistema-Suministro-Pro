@@ -1,0 +1,167 @@
+html, body.uac-app-body { margin: 0; padding: 0; }
+body.uac-app-body {
+    min-height: 100vh;
+    background: #F8FAFC;
+    color: #0F172A;
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+}
+.uac-shell, .uac-shell *, .uac-shell *::before, .uac-shell *::after { box-sizing: border-box; }
+.uac-shell { min-height: 100vh; display: flex; flex-direction: column; }
+.uac-shell .uac-ico { flex: none; display: inline-block; vertical-align: -0.125em; }
+
+.uac-skip {
+    position: absolute;
+    left: 16px;
+    top: -60px;
+    z-index: 100000;
+    padding: 10px 14px;
+    font: 600 14px/1 system-ui, sans-serif;
+    color: #FFFFFF;
+    background: #1E3A8A;
+    border-radius: 8px;
+    text-decoration: none;
+}
+.uac-skip:focus { top: 12px; }
+
+/* Barra superior */
+.uac-appbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #FFFFFF;
+    border-bottom: 1px solid #E2E8F0;
+}
+.uac-appbar-inner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    max-width: 1040px;
+    min-height: 60px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+.uac-vista-registro .uac-appbar-inner,
+.uac-vista-registro .uac-appfoot-inner { max-width: 880px; }
+.uac-vista-registro .uac-appbar-who { display: none; }
+.uac-appbar-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex: none;
+    color: #0F172A;
+    text-decoration: none;
+}
+.uac-appbar-mark {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    color: #FFFFFF;
+    background: #0F172A;
+    border-radius: 8px;
+}
+.uac-appbar-name { display: flex; flex-direction: column; line-height: 1.2; }
+.uac-appbar-name strong { font-size: 14px; font-weight: 700; letter-spacing: -0.01em; }
+.uac-appbar-name small { font-size: 12px; color: #64748B; }
+
+.uac-appnav { display: flex; align-self: stretch; gap: 4px; flex: 1; }
+.uac-appnav a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #475569;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color .15s ease, background-color .15s ease;
+}
+.uac-appnav a::after {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: -1px;
+    height: 2px;
+    background: transparent;
+    transition: background-color .15s ease;
+}
+.uac-appnav a:hover { color: #0F172A; background: #F8FAFC; }
+.uac-appnav a.is-active { color: #1E3A8A; font-weight: 600; }
+.uac-appnav a.is-active::after { background: #1E3A8A; }
+.uac-appnav a:focus-visible,
+.uac-appbar a:focus-visible { outline: 2px solid #1E3A8A; outline-offset: -2px; border-radius: 6px; }
+
+.uac-appbar-user { display: flex; align-items: center; gap: 4px; flex: none; margin-left: auto; }
+.uac-appbar-who {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    max-width: 180px;
+    padding: 0 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #0F172A;
+}
+.uac-appbar-who span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.uac-appbar-link,
+.uac-appbar-login {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 34px;
+    padding: 0 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #475569;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+.uac-appbar-link:hover { color: #0F172A; background: #F1F5F9; }
+.uac-appbar-login { color: #FFFFFF; background: #1E3A8A; font-weight: 600; }
+.uac-appbar-login:hover { background: #0F172A; }
+
+/* Contenido y pie */
+.uac-app-main { flex: 1; outline: none; }
+.uac-appfoot { border-top: 1px solid #E2E8F0; background: #FFFFFF; }
+.uac-appfoot-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px 24px;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 16px;
+    font-size: 12px;
+    color: #64748B;
+}
+
+/* Tablet */
+@media (max-width: 860px) {
+    .uac-appbar-inner { flex-wrap: wrap; gap: 0 12px; padding-top: 10px; }
+    .uac-appbar-brand { flex: 1; }
+    .uac-appnav { order: 3; flex: 1 1 100%; min-height: 46px; margin: 8px -16px 0; padding: 0 12px; border-top: 1px solid #F1F5F9; }
+}
+
+/* Celular */
+@media (max-width: 560px) {
+    .uac-appbar-name small { display: none; }
+    .uac-appbar-who, .uac-appbar-link span { display: none; }
+    .uac-appbar-link { width: 36px; height: 36px; padding: 0; justify-content: center; }
+    .uac-appnav { gap: 0; padding: 0; }
+    .uac-appnav a { flex: 1 1 0; justify-content: center; padding: 0 6px; font-size: 13px; }
+    .uac-appnav a::after { left: 0; right: 0; }
+    .uac-appfoot-inner { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .uac-shell * { transition: none !important; }
+}

@@ -1,0 +1,161 @@
+.uac-dash.uac-dash { max-width: 1040px; margin: 0 auto; padding: 24px 16px 56px; }
+
+.uac-dash .uac-sync {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #E2E8F0;
+}
+.uac-dash .uac-sync svg { color: #94A3B8; }
+.uac-dash .uac-sync.is-ok svg { color: #4ADE80; }
+.uac-dash .uac-sync.is-error svg { color: #FCA5A5; }
+.uac-dash .uac-sync-note { display: block; font-size: 12px; color: #94A3B8; margin-top: 2px; text-align: right; }
+.uac-dash .uac-sync-wrap { text-align: right; }
+
+/* Tarjetas por suministro */
+.uac-dash .uac-cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 32px;
+}
+.uac-dash .uac-card {
+    min-width: 0;
+    padding: 16px 18px 18px;
+    background: #FFFFFF;
+    border: 1px solid var(--uac-line);
+    border-radius: 10px;
+}
+.uac-dash .uac-card-top { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.uac-dash .uac-card h4 { font-size: 14px; font-weight: 600; color: var(--uac-muted); }
+.uac-dash .uac-card-pct { font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.uac-dash .uac-big-num {
+    margin: 10px 0 12px;
+    font-size: 30px;
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-variant-numeric: tabular-nums;
+}
+.uac-dash .uac-big-num span { font-size: 14px; font-weight: 400; letter-spacing: 0; color: var(--uac-faint); }
+.uac-dash .uac-progress-bg { width: 100%; height: 6px; background: var(--uac-line); border-radius: 999px; overflow: hidden; }
+.uac-dash .uac-progress-bar { height: 100%; background: var(--uac-navy-700); border-radius: inherit; transition: width .3s ease; }
+.uac-dash .uac-progress-bar.is-done { background: var(--uac-ok); }
+.uac-dash .uac-state { grid-column: 1 / -1; padding: 24px; text-align: center; color: var(--uac-faint); background: #FFFFFF; border: 1px dashed var(--uac-line-strong); border-radius: 10px; }
+.uac-dash .uac-state.is-error { color: var(--uac-bad); background: var(--uac-bad-bg); border: 1px solid var(--uac-bad-line); }
+
+/* Secciones y tablas */
+.uac-dash .uac-dash-section { margin-bottom: 32px; }
+.uac-dash .uac-dash-section-head { margin-bottom: 12px; }
+.uac-dash .uac-dash-section-head h3 { font-size: 16px; font-weight: 600; }
+.uac-dash .uac-dash-section-head p { margin-top: 2px; font-size: 13px; color: var(--uac-muted); }
+.uac-dash .uac-table-wrap { background: #FFFFFF; border: 1px solid var(--uac-line); border-radius: 10px; overflow-x: auto; }
+.uac-dash table.uac-table { width: 100%; margin: 0; border-collapse: collapse; border: 0; background: transparent; font-size: 14px; }
+.uac-dash table.uac-table th {
+    padding: 10px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: left;
+    white-space: nowrap;
+    color: var(--uac-muted);
+    background: #F8FAFC;
+    border: 0;
+    border-bottom: 1px solid var(--uac-line);
+}
+.uac-dash table.uac-table td {
+    padding: 11px 14px;
+    text-align: left;
+    vertical-align: middle;
+    font-variant-numeric: tabular-nums;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--uac-line);
+    transition: background-color .15s ease;
+}
+.uac-dash table.uac-table tbody tr:last-child td { border-bottom: 0; }
+.uac-dash table.uac-table tbody tr:hover td { background: #F8FAFC; }
+.uac-dash table.uac-table tbody tr.uac-group-start td { border-top: 1px solid var(--uac-line-strong); }
+.uac-dash table.uac-table th.uac-num,
+.uac-dash table.uac-table td.uac-num { text-align: right; }
+.uac-dash table.uac-table td.uac-muted { color: var(--uac-muted); }
+.uac-dash table.uac-table td.uac-rank { width: 48px; color: var(--uac-faint); }
+.uac-dash table.uac-table td.uac-state-cell { padding: 24px; text-align: center; color: var(--uac-faint); }
+.uac-dash .uac-falt { font-weight: 600; }
+.uac-dash .uac-falt.is-zero { color: var(--uac-ok); }
+.uac-dash .uac-avance { display: flex; align-items: center; gap: 10px; min-width: 150px; }
+.uac-dash .uac-avance .uac-progress-bg { flex: 1; }
+.uac-dash .uac-avance-pct { min-width: 38px; text-align: right; font-size: 13px; font-weight: 600; }
+.uac-dash .uac-meter { display: flex; align-items: center; justify-content: flex-end; gap: 12px; }
+.uac-dash .uac-meter-track { width: 110px; height: 6px; background: var(--uac-line); border-radius: 999px; overflow: hidden; }
+.uac-dash .uac-meter-bar { display: block; height: 100%; background: var(--uac-navy-700); border-radius: inherit; transition: width .3s ease; }
+.uac-dash .uac-meter b { min-width: 3ch; font-weight: 700; text-align: right; }
+
+.uac-dash .uac-privacy { display: flex; gap: 8px; align-items: flex-start; font-size: 12px; color: var(--uac-faint); }
+.uac-dash .uac-privacy .uac-ico { margin-top: 2px; }
+
+@media (max-width: 640px) {
+    .uac-dash.uac-dash { padding: 12px 12px 40px; }
+    .uac-dash .uac-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .uac-dash .uac-big-num { font-size: 24px; }
+    .uac-dash .uac-sync-wrap { text-align: left; }
+    .uac-dash .uac-sync-note { text-align: left; }
+}
+
+@media (max-width: 820px) {
+    .uac-dash .uac-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .uac-dash .uac-sync-wrap,
+    .uac-dash .uac-sync-note { text-align: left; }
+
+    /* Tablas en tablet y móvil: cada fila pasa a ser una ficha compacta en rejilla, sin desplazamiento lateral */
+    .uac-dash .uac-table-wrap { overflow-x: visible; }
+    .uac-dash table.uac-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .uac-dash table.uac-table,
+    .uac-dash table.uac-table tbody { display: block; width: 100%; }
+    .uac-dash table.uac-table tbody tr { display: grid; gap: 6px 12px; padding: 12px 14px; border-bottom: 1px solid var(--uac-line); }
+    .uac-dash table.uac-table tbody tr:last-child { border-bottom: 0; }
+    .uac-dash table.uac-table tbody tr.uac-group-start { border-top: 1px solid var(--uac-line-strong); }
+    .uac-dash table.uac-table tbody tr.uac-group-start td { border-top: 0; }
+    .uac-dash table.uac-table tbody tr:hover td { background: transparent; }
+    .uac-dash table.uac-table td,
+    .uac-dash table.uac-table td.uac-num { display: block; width: auto; min-width: 0; padding: 0; text-align: left; border: 0; }
+    .uac-dash table.uac-table td.uac-state-cell { grid-column: 1 / -1; padding: 12px 0; text-align: center; }
+
+    .uac-dash table.uac-table-cortes tbody tr {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-areas: "tipo tipo corte" "cant falt fecha" "avance avance avance";
+    }
+    .uac-dash table.uac-table-cortes td:nth-child(1) { grid-area: corte; justify-self: end; }
+    .uac-dash table.uac-table-cortes td:nth-child(2) { grid-area: fecha; }
+    .uac-dash table.uac-table-cortes td:nth-child(3) { grid-area: tipo; align-self: center; }
+    .uac-dash table.uac-table-cortes td:nth-child(4) { grid-area: cant; }
+    .uac-dash table.uac-table-cortes td:nth-child(5) { grid-area: falt; }
+    .uac-dash table.uac-table-cortes td:nth-child(6) { grid-area: avance; margin-top: 2px; }
+    .uac-dash table.uac-table-cortes td:is(:nth-child(2), :nth-child(4), :nth-child(5))::before {
+        content: attr(data-label);
+        display: block;
+        margin-bottom: 1px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--uac-muted);
+    }
+    .uac-dash table.uac-table-cortes td:nth-child(5)::before { content: "Faltante"; }
+    .uac-dash table.uac-table-cortes td:nth-child(4)::before { content: "Aceptado"; }
+    .uac-dash table.uac-table-cortes td:nth-child(2)::before { content: "Entrega"; }
+
+    .uac-dash table.uac-table-carreras tbody tr {
+        grid-template-columns: 24px minmax(0, 1fr) auto;
+        grid-template-areas: "rank nombre total" ". fac fac";
+        gap: 2px 10px;
+    }
+    .uac-dash table.uac-table-carreras td:nth-child(1) { grid-area: rank; width: auto; }
+    .uac-dash table.uac-table-carreras td:nth-child(2) { grid-area: nombre; }
+    .uac-dash table.uac-table-carreras td:nth-child(3) { grid-area: fac; font-size: 13px; }
+    .uac-dash table.uac-table-carreras td:nth-child(4) { grid-area: total; }
+    .uac-dash .uac-meter-track { display: none; }
+}

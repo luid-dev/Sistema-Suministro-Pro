@@ -1,0 +1,4 @@
+# Algunos servidores (p. ej. Apache de LocalWP) no declaran el tipo de WebP.
+<IfModule mod_mime.c>
+    AddType image/webp .webp
+</IfModule>

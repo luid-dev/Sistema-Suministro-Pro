@@ -1,0 +1,116 @@
+/* ===== Base ===== */
+body.uac-app-body { overflow-x: hidden; }
+.uac-shell img, .uac-shell svg { max-width: 100%; }
+.uac-shell .uac-ico { flex: none; }
+
+/* ===== Barra superior: mismo ancho que el contenido y sin desbordes ===== */
+.uac-appbar-inner,
+.uac-appfoot-inner,
+.uac-vista-registro .uac-appbar-inner,
+.uac-vista-registro .uac-appfoot-inner { max-width: 1040px; }
+.uac-appbar-inner { gap: 12px; }
+.uac-appbar-brand { min-width: 0; }
+.uac-appbar-name small { display: none; }
+.uac-appnav { min-width: 0; gap: 2px; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.uac-appnav::-webkit-scrollbar { display: none; }
+.uac-appnav a { flex: none; padding: 0 12px; }
+.uac-appnav a::after { left: 12px; right: 12px; bottom: 0; }
+.uac-appbar-user { gap: 2px; }
+.uac-appbar-who { max-width: 140px; padding: 0 8px; }
+.uac-appbar-who span { display: none; }
+@media (min-width: 861px) and (max-width: 1100px) { .uac-appnav a { padding: 0 9px; } .uac-appnav a::after { left: 9px; right: 9px; } }
+.uac-appbar-link { width: 36px; height: 36px; padding: 0; justify-content: center; }
+.uac-appbar-link span { display: none; }
+.uac-appbar-login, .uac-appbar-sec { white-space: nowrap; }
+
+@media (max-width: 860px) {
+    .uac-appbar-inner { flex-wrap: wrap; gap: 0 8px; padding-top: 10px; padding-bottom: 0; }
+    .uac-appbar-brand { flex: 1 1 auto; }
+    .uac-appbar-user { padding-bottom: 0; }
+    .uac-appnav { order: 3; flex: 0 0 calc(100% + 32px); width: calc(100% + 32px); min-height: 46px; margin: 8px -16px 0; padding: 0 12px; border-top: 1px solid #F1F5F9; }
+}
+@media (max-width: 560px) {
+    .uac-appbar-inner { padding-left: 12px; padding-right: 12px; }
+    .uac-appnav { flex-basis: calc(100% + 24px); width: calc(100% + 24px); min-height: 52px; margin: 8px -12px 0; padding: 0 4px; gap: 0; }
+    .uac-appnav a { flex: 1 1 0; min-width: 0; flex-direction: column; justify-content: center; gap: 3px; padding: 6px 2px; font-size: 11px; font-weight: 600; line-height: 1.2; text-align: center; }
+    .uac-nl { display: none; }
+    .uac-ns { display: inline; }
+    .uac-appnav a::after { left: 10px; right: 10px; }
+    .uac-appnav a .uac-nav-badge { position: absolute; top: 3px; left: calc(50% + 6px); min-width: 16px; padding: 0 4px; font-size: 10px; }
+    .uac-appbar-who { display: none; }
+}
+@media (min-width: 561px) { .uac-ns { display: none; } }
+
+/* ===== Contenido ===== */
+.uac-box.uac-box, .uac-vol { max-width: 1040px; margin: 0 auto; padding: 24px 16px 56px; }
+.uac-vol .uac-vol-sec:first-child { margin-top: 0; }
+.uac-cortes .uac-corte-grid { align-items: end; }
+@media (max-width: 560px) { .uac-box.uac-box, .uac-vol { padding: 12px 12px 40px; } }
+.uac-box.uac-box, .uac-vol { max-width: 1040px; margin: 0 auto; padding: 24px 16px 56px; }
+.uac-vol .uac-vol-sec:first-child { margin-top: 0; }
+.uac-cortes .uac-corte-grid { align-items: end; }
+@media (max-width: 560px) { .uac-box.uac-box, .uac-vol { padding: 12px 12px 40px; } }
+.uac-dash.uac-dash { padding-top: 20px; }
+.uac-dash .uac-dash-section { margin-bottom: 28px; }
+.uac-podio, .uac-kpis, .uac-grid2, .uac-global { margin-top: 12px; margin-bottom: 12px; }
+.uac-podio-card, .uac-kpi, .uac-panel, .uac-global, .uac-dash .uac-card, .uac-dash .uac-table-wrap { border-radius: 12px; }
+
+/* Tarjetas de indicadores: misma altura, mismo relleno */
+.uac-kpis { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.uac-kpi { justify-content: flex-start; min-height: 104px; padding: 14px 16px; }
+.uac-kpi span { line-height: 1.3; }
+.uac-kpi strong { margin: 4px 0; font-size: 26px; }
+.uac-dash .uac-cards { margin-bottom: 20px; }
+.uac-dash .uac-card { padding: 14px 16px 16px; }
+.uac-dash .uac-card h4 { line-height: 1.3; }
+
+/* Podio: tarjetas del mismo tamaño */
+.uac-podio-card { height: 100%; min-height: 112px; }
+.uac-podio-card b { margin-top: auto; padding-top: 6px; }
+.uac-podio-fac { line-height: 1.3; }
+
+/* Paneles gemelos a la misma altura */
+.uac-grid2 { align-items: stretch; }
+.uac-panel { display: flex; flex-direction: column; min-width: 0; }
+.uac-panel h3 { flex: none; }
+.uac-hbars li > span { overflow-wrap: anywhere; }
+.uac-panel { container-type: inline-size; }
+@container (max-width: 430px) {
+    .uac-hbars li { grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; }
+    .uac-hbars li > div { grid-column: 1 / -1; grid-row: 2; }
+}
+
+@media (max-width: 860px) {
+    .uac-podio-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .uac-grid2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .uac-kpis { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .uac-kpi { grid-column: span 2; }
+    .uac-kpi:nth-last-child(-n+2) { grid-column: span 3; }
+    .uac-dash .uac-cards { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+    .uac-grid2 { grid-template-columns: 1fr; }
+    .uac-dash .uac-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+    .uac-dash.uac-dash { padding: 12px 12px 40px; }
+    .uac-podio-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    .uac-podio-card { min-height: 0; padding: 12px; }
+    .uac-podio-card.is-p1 { grid-column: 1 / -1; }
+    .uac-podio-card strong { font-size: 15px; }
+    .uac-podio-card b { font-size: 18px; }
+    .uac-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    .uac-kpi, .uac-kpi:nth-last-child(-n+2) { grid-column: auto; min-height: 0; padding: 12px; }
+    .uac-kpi:last-child:nth-child(odd) { grid-column: 1 / -1; }
+    .uac-kpi strong { font-size: 24px; }
+    .uac-dash .uac-cards { gap: 8px; }
+    .uac-dash .uac-card { padding: 12px; }
+    .uac-panel { padding: 14px; }
+    .uac-bars { gap: 6px; height: 140px; }
+    .uac-dash .uac-card h4, .uac-kpi > span { min-height: 2.6em; }
+    .uac-feed li { flex-direction: column; gap: 0; padding: 10px 2px; }
+    .uac-panel .uac-feed li { flex-direction: row; gap: 10px; padding: 10px 0; }
+}
+.uac-panel .uac-feed-hora { min-width: 2em; }
+.uac-panel .uac-muted { margin: 14px 0 0; font-size: 13px; line-height: 1.4; }
+.uac-dash table.uac-table td.uac-state-cell { grid-area: auto !important; grid-column: 1 / -1; justify-self: stretch !important; text-align: center !important; width: auto; }

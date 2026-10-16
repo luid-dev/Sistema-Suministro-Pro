@@ -1,0 +1,30 @@
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Credenciales y configuración local: NUNCA se suben
+wp-config.php
+.env
+.env.*
+*.pem
+*.key
+
+# Datos, registros y copias de seguridad
+*.sql
+*.sql.gz
+*.log
+*.bak
+backup/
+backups/
+
+# Código heredado con credenciales (versión 1.x con Google Apps Script)
+apps-script/
+*.gs
+
+# Paquetes generados y dependencias
+*.zip
+node_modules/
+vendor/

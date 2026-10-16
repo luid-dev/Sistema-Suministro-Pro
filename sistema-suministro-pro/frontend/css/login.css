@@ -1,0 +1,180 @@
+:root {
+    --uac-navy-900: #0F172A;
+    --uac-navy-700: #1E3A8A;
+    --uac-ink: #0F172A;
+    --uac-muted: #475569;
+    --uac-faint: #64748B;
+    --uac-line: #E2E8F0;
+    --uac-line-strong: #CBD5E1;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { overflow-y: scroll; scrollbar-gutter: stable; }
+body.uac-login-body {
+    min-height: 100vh;
+    overflow-x: clip;
+    background: #FFFFFF;
+    color: var(--uac-ink);
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+}
+.uac-login h1, .uac-login h2, .uac-login p, .uac-login ul, .uac-login figure { margin: 0; padding: 0; }
+.uac-login ul { list-style: none; }
+.uac-login .uac-ico { flex: none; display: inline-block; vertical-align: -0.125em; }
+.uac-login a { color: var(--uac-navy-700); text-underline-offset: 3px; transition: color .15s ease; }
+.uac-login a:hover { color: var(--uac-navy-900); }
+.uac-login a:focus-visible,
+.uac-login button:focus-visible { outline: 2px solid var(--uac-navy-700); outline-offset: 2px; border-radius: 4px; }
+
+.uac-login {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+/* Fotografía a sangre: ocupa todo el lado izquierdo */
+.uac-login-aside {
+    position: sticky;
+    top: 0;
+    align-self: start;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+    background: var(--uac-navy-900);
+}
+.uac-login-aside img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: 14% 40%;
+}
+
+/* Formulario */
+.uac-login-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-width: 0;
+    padding: clamp(24px, 7vh, 72px) 40px 24px;
+    background: #FFFFFF;
+}
+.uac-login-panel { width: 100%; max-width: 420px; margin: 0 auto; }
+.uac-login-brand { display: flex; align-items: center; gap: 12px; }
+.uac-login-mark {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    color: #FFFFFF;
+    background: var(--uac-navy-900);
+    border-radius: 8px;
+}
+.uac-login-brand > span:last-child { display: flex; flex-direction: column; line-height: 1.25; }
+.uac-login-brand strong { font-size: 15px; font-weight: 700; letter-spacing: -0.01em; }
+.uac-login-brand small { font-size: 12px; color: var(--uac-faint); }
+.uac-login h1 { margin: 24px 0 6px; font-size: 26px; font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
+.uac-login-lead { font-size: 14px; line-height: 1.5; color: var(--uac-muted); }
+
+.uac-login-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 16px;
+    padding: 10px 12px;
+    font-size: 13px;
+    border-radius: 8px;
+}
+.uac-login-alert .uac-ico { margin-top: 2px; }
+.uac-login-alert.is-error { color: #B91C1C; background: #FEE2E2; }
+.uac-login-alert.is-ok { color: #15803D; background: #DCFCE7; }
+
+.uac-login-form { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+.uac-login-field label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 600; }
+.uac-login-field input {
+    display: block;
+    width: 100%;
+    height: 44px;
+    margin: 0;
+    padding: 0 12px;
+    font: inherit;
+    font-size: 16px;
+    color: var(--uac-ink);
+    background: #FFFFFF;
+    border: 1px solid var(--uac-line-strong);
+    border-radius: 8px;
+    box-shadow: none;
+    -webkit-appearance: none;
+    appearance: none;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+.uac-login-field input:hover { border-color: #94A3B8; }
+.uac-login-field input:focus { outline: none; border-color: var(--uac-navy-700); box-shadow: 0 0 0 3px rgba(30, 58, 138, .15); }
+.uac-login-pwd { position: relative; }
+.uac-login-pwd input { padding-right: 52px; }
+.uac-login-eye {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    color: var(--uac-faint);
+    background: transparent;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color .15s ease, color .15s ease;
+}
+.uac-login-eye:hover { color: var(--uac-ink); background: #F1F5F9; }
+.uac-login-check { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; color: var(--uac-muted); cursor: pointer; }
+.uac-login-check input { width: 18px; height: 18px; margin: 0; accent-color: var(--uac-navy-700); cursor: pointer; }
+.uac-login-submit {
+    height: 46px;
+    margin: 6px 0 0;
+    padding: 0 20px;
+    font: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFFFFF;
+    background: var(--uac-navy-700);
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color .15s ease;
+}
+.uac-login-submit:hover { background: var(--uac-navy-900); }
+.uac-login-submit:active { background: #0B1220; }
+
+.uac-login .uac-login-help { display: flex; flex-direction: column; gap: 6px; margin-top: 18px; font-size: 14px; }
+.uac-login-help span { color: var(--uac-faint); }
+.uac-login .uac-login-foot { max-width: 420px; width: 100%; margin: auto auto 0; padding-top: 32px; font-size: 12px; line-height: 1.5; color: var(--uac-faint); }
+
+/* Tablet y celular: la foto pasa a ser una franja superior y el formulario va debajo */
+@media (max-width: 900px) {
+    .uac-login { grid-template-columns: 1fr; min-height: 0; }
+    .uac-login-aside { position: relative; align-self: stretch; height: 200px; }
+    .uac-login-aside img { object-position: center 62%; }
+    .uac-login-main { padding: 24px 20px 32px; }
+    .uac-login .uac-login-foot { padding-top: 28px; }
+}
+@media (max-width: 480px) {
+    .uac-login-aside { height: 140px; }
+    .uac-login-main { padding: 20px 16px 28px; }
+    .uac-login h1 { font-size: 24px; }
+    .uac-login-tabs button { padding: 0 6px; font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .uac-login * { transition: none !important; }
+}

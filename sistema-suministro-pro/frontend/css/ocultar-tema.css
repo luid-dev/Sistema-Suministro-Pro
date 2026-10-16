@@ -1,0 +1,24 @@
+.wp-site-blocks > header,
+.wp-site-blocks > footer,
+.wp-site-blocks > .wp-block-template-part,
+body > header,
+body > footer,
+#masthead,
+#colophon,
+.site-header,
+.site-footer,
+.wp-block-post-title,
+.entry-header,
+.page-header {
+    display: none !important;
+}
+html body {
+    background-color: #F8FAFC !important;
+}
+.wp-site-blocks {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+.wp-site-blocks > main {
+    margin-top: 0 !important;
+}

@@ -1,0 +1,118 @@
+.uac-box,
+.uac-dash {
+    --uac-navy-900: #0F172A;
+    --uac-navy-700: #1E3A8A;
+    --uac-bg: #F8FAFC;
+    --uac-surface: #FFFFFF;
+    --uac-line: #E2E8F0;
+    --uac-line-strong: #CBD5E1;
+    --uac-text: #0F172A;
+    --uac-muted: #475569;
+    --uac-faint: #64748B;
+    --uac-ok: #15803D;
+    --uac-ok-bg: #DCFCE7;
+    --uac-ok-line: #BBF7D0;
+    --uac-bad: #B91C1C;
+    --uac-bad-bg: #FEE2E2;
+    --uac-bad-line: #FECACA;
+    --uac-info: #1E3A8A;
+    --uac-info-bg: #EFF6FF;
+    --uac-info-line: #BFDBFE;
+    --uac-warn: #B45309;
+    --uac-warn-bg: #FEF3C7;
+    --uac-warn-line: #FDE68A;
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--uac-text);
+    text-align: left;
+    -webkit-font-smoothing: antialiased;
+}
+.uac-box *, .uac-box *::before, .uac-box *::after,
+.uac-dash *, .uac-dash *::before, .uac-dash *::after {
+    box-sizing: border-box;
+}
+.uac-box :is(h2, h3, h4, h5, p, ul, dl, dt, dd, figure),
+.uac-dash :is(h2, h3, h4, h5, p, ul, dl, dt, dd, figure) {
+    margin: 0;
+    padding: 0;
+}
+.uac-box :is(h2, h3, h4, h5),
+.uac-dash :is(h2, h3, h4, h5) {
+    font-family: inherit;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0;
+    text-transform: none;
+    color: inherit;
+}
+.uac-box ul, .uac-dash ul { list-style: none; margin: 0; padding: 0; }
+.uac-box li, .uac-dash li { list-style: none; margin: 0; }
+.uac-box :is(input, select), .uac-dash :is(input, select) { margin: 0; }
+.uac-box :is(button, input, select), .uac-dash :is(button, input, select) { font-family: inherit; }
+.uac-box code, .uac-dash code {
+    font-size: 12px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: #F1F5F9;
+    color: var(--uac-text);
+}
+.uac-box .uac-ico, .uac-dash .uac-ico { flex: none; display: inline-block; vertical-align: -0.125em; }
+
+@keyframes uac-spin { to { transform: rotate(360deg); } }
+@keyframes uac-fade { from { opacity: 0; } to { opacity: 1; } }
+.uac-box .uac-spin { animation: uac-spin .8s linear infinite; }
+
+/* Cabecera institucional */
+.uac-box .uac-head,
+.uac-dash .uac-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px 20px;
+    flex-wrap: wrap;
+    background: var(--uac-navy-900);
+    color: #FFFFFF;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 16px;
+}
+.uac-box .uac-brand, .uac-dash .uac-brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.uac-box .uac-brand-mark, .uac-dash .uac-brand-mark {
+    flex: none;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    background: var(--uac-navy-700);
+    color: #FFFFFF;
+}
+.uac-box .uac-title, .uac-dash .uac-title { font-size: 18px; font-weight: 600; color: #FFFFFF; }
+.uac-box .uac-subtitle, .uac-dash .uac-subtitle { font-size: 13px; color: #CBD5E1; margin-top: 2px; }
+
+/* Badges */
+.uac-box .uac-badge, .uac-dash .uac-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+.uac-box .uac-badge-ok, .uac-dash .uac-badge-ok { color: var(--uac-ok); background: var(--uac-ok-bg); border-color: var(--uac-ok-line); }
+.uac-box .uac-badge-warn, .uac-dash .uac-badge-warn { color: var(--uac-bad); background: var(--uac-bad-bg); border-color: var(--uac-bad-line); }
+.uac-box .uac-badge-amber, .uac-dash .uac-badge-amber { color: var(--uac-warn); background: var(--uac-warn-bg); border-color: var(--uac-warn-line); }
+.uac-box .uac-badge-navy, .uac-dash .uac-badge-navy { color: var(--uac-info); background: var(--uac-info-bg); border-color: var(--uac-info-line); }
+.uac-box .uac-badge-neutral, .uac-dash .uac-badge-neutral { color: var(--uac-muted); background: #F1F5F9; border-color: var(--uac-line); }
+
+@media (max-width: 640px) {
+    .uac-box .uac-head, .uac-dash .uac-head { padding: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .uac-box *, .uac-dash * { transition: none !important; animation: none !important; }
+}
